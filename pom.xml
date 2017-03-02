@@ -25,96 +25,14 @@
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
                 <configuration>
-                    <source>${maven.compiler.source}</source>
-                    <target>${maven.compiler.target}</target>
+                    <source>${java.version}</source>
+                    <target>${java.version}</target>
                 </configuration>
             </plugin>
         </plugins>
     </build>
 
     <dependencies>
-        <!-- Put here PostgreSQL connector dependency-->
-        <!--
-                <dependency>
-                    <groupId>log4j</groupId>
-                    <artifactId>log4j</artifactId>
-                    <version>1.2.17</version>
-                </dependency>
-        -->
-        <!--
-
-                <dependency>
-                    <groupId>org.postgresql</groupId>
-                    <artifactId>postgresql</artifactId>
-                    <version>9.4.1208</version>
-                </dependency>
-
-        -->
-
-<!--        <dependency>
-            <groupId>org.apache.commons</groupId>
-            <artifactId>commons-dbcp2</artifactId>
-            <version>2.1.1</version>
-        </dependency>-->
-
-        <!--
-                <dependency>
-                    <groupId>junit</groupId>
-                    <artifactId>junit</artifactId>
-                    <version>4.12</version>
-                </dependency>
-        -->
-
-
-<!--        <dependency>
-            <groupId>javax.servlet</groupId>
-            <artifactId>javax.servlet-api</artifactId>
-            <version>3.1.0</version>
-            <scope>provided</scope>
-        </dependency>
-        <dependency>
-            <groupId>jstl</groupId>
-            <artifactId>jstl</artifactId>
-            <version>1.2</version>
-        </dependency>
-        <dependency>
-            <groupId>taglibs</groupId>
-            <artifactId>standard</artifactId>
-            <version>1.1.2</version>
-        </dependency>
-        <dependency>
-            <groupId>com.google.guava</groupId>
-            <artifactId>guava</artifactId>
-            <version>19.0</version>
-        </dependency>-->
-
-        <!--Heroku dependecies-->
-<!--        <dependency>
-            <groupId>org.apache.maven.plugins</groupId>
-            <artifactId>maven-dependency-plugin</artifactId>
-            <version>2.10</version>
-        </dependency>
-        <dependency>
-            <groupId>com.sparkjava</groupId>
-            <artifactId>spark-core</artifactId>
-            <version>2.2</version>
-        </dependency>
-        <dependency>
-            <groupId>com.sparkjava</groupId>
-            <artifactId>spark-template-freemarker</artifactId>
-            <version>2.0.0</version>
-        </dependency>
-        <dependency>
-            <groupId>com.heroku.sdk</groupId>
-            <artifactId>heroku-jdbc</artifactId>
-            <version>0.1.1</version>
-        </dependency>
-        <dependency>
-            <groupId>org.jscience</groupId>
-            <artifactId>jscience</artifactId>
-            <version>4.3.1</version>
-        </dependency>-->
-
         <!-- Внедрение SPRING -->
 
         <!-- Logging with SLF4J & LogBack -->
@@ -146,34 +64,6 @@
             <scope>runtime</scope>
         </dependency>
 
-        <!--Web-->
-<!--
-        <dependency>
-            <groupId>org.apache.tomcat</groupId>
-            <artifactId>tomcat-servlet-api</artifactId>
-            <version>${tomcat.version}</version>
-            <scope>provided</scope>
-        </dependency>
-
-        <dependency>
-            <groupId>org.springframework</groupId>
-            <artifactId>spring-webmvc</artifactId>
-            <version>${spring.version}</version>
-            <exclusions>
-                <exclusion>
-                    <groupId>commons-logging</groupId>
-                    <artifactId>commons-logging</artifactId>
-                </exclusion>
-            </exclusions>
-        </dependency>
-
-        <dependency>
-            <groupId>javax.servlet</groupId>
-            <artifactId>jstl</artifactId>
-            <version>1.2</version>
-        </dependency>
--->
-
         <!-- Spring -->
 
         <dependency>
@@ -187,25 +77,6 @@
                 </exclusion>
             </exclusions>
         </dependency>
-
-        <!--DataBase-->
-
-        <!--<dependency>-->
-            <!--<groupId>org.postgresql</groupId>-->
-            <!--<artifactId>postgresql</artifactId>-->
-            <!--<version>${postgresql.version}</version>-->
-        <!--</dependency>-->
-        <!--<dependency>-->
-            <!--<groupId>org.springframework</groupId>-->
-            <!--<artifactId>spring-jdbc</artifactId>-->
-            <!--<version>${spring.version}</version>-->
-        <!--</dependency>-->
-
-        <!--<dependency>-->
-            <!--<groupId>org.apache.tomcat</groupId>-->
-            <!--<artifactId>tomcat-jdbc</artifactId>-->
-            <!--<version>${tomcat.version}</version>-->
-        <!--</dependency>-->
 
         <!--Test-->
 
@@ -223,43 +94,15 @@
             <scope>test</scope>
         </dependency>
 
-<!--
-        <dependency>
-            <groupId>org.springframework</groupId>
-            <artifactId>spring-orm</artifactId>
-            <version>4.2.4.RELEASE</version>
-        </dependency>
-
-        <dependency>
-            <groupId>org.hibernate</groupId>
-            <artifactId>hibernate-entitymanager</artifactId>
-            <version>4.3.11.Final</version>
-        </dependency>
-
-        <dependency>
-            <groupId>org.hibernate</groupId>
-            <artifactId>hibernate-validator</artifactId>
-            <version>5.2.2.Final</version>
-        </dependency>
--->
-
     </dependencies>
 
     <properties>
-        <maven.compiler.source>1.8</maven.compiler.source>
-        <maven.compiler.target>1.8</maven.compiler.target>
-
-<!--        <tomcat.version>8.5.4</tomcat.version>-->
-
         <java.version>1.8</java.version>
 
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 
         <spring.version>4.2.3.RELEASE</spring.version>
-
-        <!-- Database -->
-<!--        <postgresql.version>9.4.1208</postgresql.version>-->
 
         <!-- Test -->
         <junit.version>4.12</junit.version>
