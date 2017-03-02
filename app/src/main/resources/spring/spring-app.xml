@@ -1,0 +1,52 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+
+    <context:annotation-config/>
+
+    <beans profile="base">
+        <import resource="classpath:spring/base.spring.xml"/>
+
+        <bean id="programBase" class="Program">
+            <constructor-arg ref="base"/>
+            <constructor-arg ref="baseDescription"/>
+        </bean>
+    </beans>
+
+    <beans profile="baseExt1">
+        <import resource="classpath:spring/base.spring.xml"/>
+        <import resource="classpath:spring/ext1.spring.xml"/>
+
+        <bean id="programBaseExt1" class="Program">
+            <constructor-arg ref="ext1"/>
+            <constructor-arg ref="baseDescription"/>
+            <constructor-arg ref="ext1Description"/>
+        </bean>
+    </beans>
+
+    <beans profile="baseExt2">
+        <import resource="classpath:spring/base.spring.xml"/>
+        <import resource="classpath:spring/ext2.spring.xml"/>
+
+        <bean id="programBaseExt2" class="Program">
+            <constructor-arg ref="ext2"/>
+            <constructor-arg ref="baseDescription"/>
+            <constructor-arg ref="ext2Description"/>
+        </bean>
+    </beans>
+
+    <beans profile="baseExt1Ext2">
+        <import resource="classpath:spring/base.spring.xml"/>
+        <import resource="classpath:spring/ext1.spring.xml"/>
+        <import resource="classpath:spring/ext1ext2.spring.xml"/>
+
+        <bean id="programBaseExt1Ext2" class="Program">
+            <constructor-arg ref="ext1Ext2"/>
+            <constructor-arg ref="baseDescription"/>
+            <constructor-arg ref="ext1Description"/>
+            <constructor-arg ref="ext2Description"/>
+        </bean>
+    </beans>
+</beans>

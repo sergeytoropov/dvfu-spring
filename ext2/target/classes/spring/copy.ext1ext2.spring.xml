@@ -1,0 +1,70 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="
+           http://www.springframework.org/schema/beans
+           http://www.springframework.org/schema/beans/spring-beans.xsd
+           http://www.springframework.org/schema/context
+           http://www.springframework.org/schema/context/spring-context.xsd">
+
+
+
+    <!--<jdbc:initialize-database data-source="dataSource" enabled="${database.init}">
+        <jdbc:script location="classpath:db/${jdbc.initLocation}"/>
+        <jdbc:script encoding="utf-8" location="classpath:db/populateDB.sql"/>
+    </jdbc:initialize-database>
+-->
+    <!--
+        <bean class="u.javawebinar.topjava.repository.mock.MockUserRepository" id="mockUserRepository"/>
+
+        <bean class="ru.javawebinar.topjava.service.UserServiceImpl">
+            <property name="repository" ref="mockUserRepository"/>
+        </bean>
+    -->
+
+    <!-- Независимые -->
+
+    <!--<bean id="loggedUser" class="ru.javawebinar.topjava.LoggedUser"/>
+
+    <bean id="inMemoryUserRepository" class="ru.javawebinar.topjava.repository.mock.InMemoryUserRepositoryImpl"/>
+
+    <bean id="inMemoryUserMealRepository" class="ru.javawebinar.topjava.repository.mock.InMemoryUserMealRepositoryImpl"/>
+-->
+    <!-- Зависимые -->
+
+    <!--  <bean id="userMealService" class="ru.javawebinar.topjava.service.UserMealServiceImpl">
+          <property name="repository" ref="inMemoryUserMealRepository"/>
+          <property name="loggedUser" ref="loggedUser"/>
+      </bean>
+
+      <bean id="userMealRestController" class="ru.javawebinar.topjava.web.meal.UserMealRestController">
+          <property name="service" ref="userMealService"/>
+      </bean>-->
+
+    <!-- -->
+
+<!--    <context:component-scan base-package="**"/>-->
+
+    <!--
+    <context:property-placeholder location="classpath:db/postgres.properties" system-properties-mode="OVERRIDE"/>
+
+    <bean id="dataSource"
+          class="org.apache.tomcat.jdbc.pool.DataSource"
+          p:driverClassName="${database.driverClassName}"
+          p:url="${database.url}"
+          p:username="${database.username}"
+          p:password="${database.password}"/>
+
+    <bean id="jdbcTemplate" class="org.springframework.jdbc.core.JdbcTemplate">
+        <constructor-arg ref="dataSource"/>
+    </bean>
+
+    <bean id="namedJdbcTemplate" class="org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate">
+        <constructor-arg ref="dataSource"/>
+    </bean>
+    -->
+
+    <bean id="ext2" class="Ext2"/>
+    <bean id="ext1Ext2" class="Ext1Ext2"/>
+</beans>
