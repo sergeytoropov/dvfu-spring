@@ -9,5 +9,8 @@
            http://www.springframework.org/schema/context/spring-context.xsd">
 
     <bean id="ext1Description" class="Ext1Description"/>
-    <bean id="ext1" class="Ext1"/>
+    <bean id="injectBaseToExt1" class="Base"/>
+    <bean id="ext1" class="Ext1">
+        <property name="helloWorld" ref="injectBaseToExt1"/>
+    </bean>
 </beans>

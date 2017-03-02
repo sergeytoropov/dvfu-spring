@@ -58,8 +58,15 @@ public class Launcher {
         String activeModules = getActiveModules("classpath:app/app.properties");
 
         ConfigurableApplicationContext appCtx = new ClassPathXmlApplicationContext("spring/spring-app.xml");
+        // Реализация через профили.
         appCtx.getEnvironment().setActiveProfiles(activeModules);
         appCtx.refresh();
+        // Возможен и второй вариант, когда в зависимости от activeModule используется разный spring-app.xml
+        // Например:
+        //ConfigurableApplicationContext appCtx = new ClassPathXmlApplicationContext("spring/spring-app-base.xml");
+        //ConfigurableApplicationContext appCtx = new ClassPathXmlApplicationContext("spring/spring-app-baseExt1.xml");
+        //ConfigurableApplicationContext appCtx = new ClassPathXmlApplicationContext("spring/spring-app-baseExt2.xml");
+        //ConfigurableApplicationContext appCtx = new ClassPathXmlApplicationContext("spring/spring-app-baseExt1Ext2.xml");
 
         //printBeans(appCtx);
 

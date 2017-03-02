@@ -9,4 +9,5 @@
            http://www.springframework.org/schema/context/spring-context.xsd">
 
     <bean id="ext2Description" class="Ext2Description"/>
+    <bean id="injectBaseToExt2" class="Base"/>
 </beans>

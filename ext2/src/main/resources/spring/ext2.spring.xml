@@ -9,5 +9,8 @@
            http://www.springframework.org/schema/context/spring-context.xsd">
 
     <import resource="classpath:spring/common.spring.xml"/>
-    <bean id="ext2" class="Ext2"/>
+    <bean id="injectBaseToExt2" class="Base"/>
+    <bean id="ext2" class="Ext2">
+        <property name="helloWorld" ref="injectBaseToExt2"/>
+    </bean>
 </beans>

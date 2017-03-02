@@ -9,5 +9,10 @@
            http://www.springframework.org/schema/context/spring-context.xsd">
 
     <import resource="classpath:spring/common.spring.xml"/>
-    <bean id="ext1Ext2" class="Ext1Ext2"/>
+    <bean id="injectExt1ToExt1Ext2" class="Ext1">
+        <property name="helloWorld" ref="injectBaseToExt2"/>
+    </bean>
+    <bean id="ext1Ext2" class="Ext1Ext2">
+        <property name="helloWorld" ref="injectExt1ToExt1Ext2"/>
+    </bean>
 </beans>
